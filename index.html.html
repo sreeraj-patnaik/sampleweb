@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your YouTube Channel Name</title>
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 1.5em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1em;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffda79;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: auto;
+        }
+
+        .about, .videos {
+            background: #fff;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h2, .videos h2 {
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+
+        .about p, .video-grid p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: space-around;
+        }
+
+        .video-grid iframe {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-grid iframe:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: 2em;
+        }
+
+        footer p {
+            margin: 0.5em 0;
+        }
+
+        footer a {
+            color: #ffda79;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f2a365;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Your Channel Name</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#videos">Videos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About My Channel</h2>
+        <p>Welcome to my YouTube channel! Here, I upload videos on [topic, e.g., tech reviews, tutorials, gaming, etc.]. My goal is to provide valuable content and insights to help you stay informed and entertained. Don't forget to subscribe!</p>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <h2>Recent Videos</h2>
+        <div class="video-grid">
+            <!-- Replace the src URLs with the URLs of your YouTube videos -->
+            <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video Title 1"></iframe>
+            <iframe src="https://www.youtube.com/embed/9rYdlHUrGwc" title="Video Title 2"></iframe>
+            <iframe src="https://www.youtube.com/embed/W-ZTsHbWbVU" title="Video Title 3"></iframe>
+            <iframe src="https://www.youtube.com/embed/ksTUc0eIIKQ" title="Video Title 4"></iframe>
+        </div>
+    </section>
+</main>
+
+<!-- Contact & Social Media -->
+<footer>
+    <p>Connect with me on social media:</p>
+    <p>
+        <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a> |
+        <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a> |
+        <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank">YouTube</a>
+    </p>
+    <p>&copy; 2024 Your Channel Name</p>
+</footer>
+
+</body>
+</html>

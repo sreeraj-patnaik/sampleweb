@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPUTECH WITH SREERAJ PATNAIK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f6;
+            color: #2d2e33;
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            background: #1a1c26;
+            color: #f4f4f6;
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        header .logo {
+            max-width: 150px;
+            margin-bottom: 0.5em;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 700;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        nav {
+            margin-top: 0.5em;
+        }
+
+        nav a {
+            color: #d9a52e;
+            text-decoration: none;
+            margin: 0 1.5em;
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            transform: scale(1.1);
+        }
+
+        .scrolling-feedback {
+            background-color: #222; /* Change the background color here */
+            color: #ffd700;
+            padding: 8px 0;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            animation: glow-blink 1s infinite alternate;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .scrolling-feedback a {
+            color: #ffd700;
+            background: #444;
+            padding: 6px 12px;
+            margin-left: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Keyframes for glowing effect */
+        @keyframes glow-blink {
+            0%, 100% {
+                text-shadow: none;
+            }
+            50% {
+                text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+            }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 1em;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            padding: 1em;
+        }
+
+        /* Tabs Style */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #d9a52e;
+            margin: 2em 0;
+        }
+
+        .tab {
+            padding: 1em 2em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            border-radius: 5px 5px 0 0;
+            background: #f4f4f6;
+            color: #1a1c26;
+            font-weight: bold;
+        }
+
+        .tab:hover {
+            background: #d9a52e;
+            color: #f4f4f6;
+        }
+
+        .tab.active {
+            background: #1a1c26;
+            color: #ffd700;
+        }
+
+        /* Content Section */
+        .content {
+            display: none;
+            background: #f4f4f6;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+            border-top: 2px solid #d9a52e;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1em;
+            justify-items: center;
+        }
+
+        .gallery iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery iframe:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            background: #1a1c26;
+            color: #f4f4f6;
+            text-align: center;
+            padding: 1.5em 0;
+            border-top: 4px solid #d9a52e;
+            margin-top: 2em;
+        }
+
+        footer p {
+            margin: 0.5em 0;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #d9a52e;
+        }
+
+        /* About Host Section */
+        .about-host {
+            width: 20%;
+            padding: 1em;
+            background-color: #f4f4f6;
+            border-left: 2px solid #d9a52e;
+            text-align: center;
+        }
+
+        .about-host img {
+            width: 80%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-host h3 {
+            color: #d9a52e;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav a {
+                margin: 0 0.5em;
+                font-size: 0.9em;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .about-host {
+                width: 100%;
+                margin-top: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <h1>COMPUTECH WITH SREERAJ PATNAIK</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="scrolling-feedback">
+    <marquee behavior="scroll" direction="left">
+        We value your feedback! Let us know how we can improve the channel.
+        <a href="https://surveyheart.com/form/6723cd32c6f4220631356d9d" target="_blank">Take Survey</a>
+    </marquee>
+</div>
+
+<div class="scrolling-feedback" style="background-color: #222; color: #ffd700;">
+    <marquee behavior="scroll" direction="left">
+        🎉  I am happy to announce you that i won first prize in Poetry at the District Level Yuva Utsav Competition, hosted by the Central Government!
+    </marquee>
+</div>
+
+<main class="container">
+    <div class="content-wrapper">
+        <section id="about">
+            <h2>About My Channel</h2>
+            <p>Welcome to my YouTube channel! Here, I upload videos on tutorials and topics related to computers. My goal is to provide valuable content and insights to help you stay informed and entertained. Don't forget to subscribe!</p>
+        </section>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showContent('videos')">Videos</div>
+            <div class="tab" onclick="showContent('playlists')">Playlists</div>
+        </div>
+
+        <div id="videos" class="content active">
+            <h2>Recent Videos</h2>
+            <div class="gallery">
+                <iframe src="https://www.youtube.com/embed/PpI8KouAKJs" title="Video Title 1"></iframe>
+                <iframe src="https://www.youtube.com/embed/another-video" title="Video Title 2"></iframe>
+                <iframe src="https://www.youtube.com/embed/another-video" title="Video Title 3"></iframe>
+            </div>
+        </div>
+
+        <div id="playlists" class="content">
+            <h2>Playlists</h2>
+            <p>Check out my playlists for a curated selection of my videos!</p>
+        </div>
+    </div>
+
+    <aside class="about-host">
+        <h3>About Me</h3>
+        <img src="images/profile.jpg" alt="Sreeraj Patnaik Dabbiru">
+        <p>Hi! I am Sreeraj, a passionate content creator focusing on technology and computers. Join me on this journey!</p>
+    </aside>
+</main>
+
+<footer>
+    <p>&copy; 2024 Computech with Sreeraj Patnaik. All rights reserved.</p>
+    <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+</footer>
+
+<script>
+    function showContent(id) {
+        const contents = document.querySelectorAll('.content');
+        const tabs = document.querySelectorAll('.tab');
+
+        contents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        document.getElementById(id).classList.add('active');
+        document.querySelector(`.tab[onclick="showContent('${id}')"]`).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
